@@ -1,0 +1,15 @@
+version: "2"
+services:
+  app:
+    image: danieljust/domain-finder-v1
+    tty: true
+    ports:
+      - "3000:3000"
+  rabbit:
+    image: rabbitmq:3
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
